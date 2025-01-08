@@ -40,3 +40,37 @@ Além do jogo em si, há outras funcionalidades:
 - **Início do Jogo**:
     - Assim que o Firebase deteta dois jogadores na sala, o ecrã de espera desaparece, e o jogo é iniciado para ambos os jogadores.
 
+### Desenhos, Esquemas e Protótipos da Aplicação
+
+Separação de cada peça da aplicação para cada etapa da criação:
+
+![Ficheiros](C:\AndroidProjects\WarCardGame\Ficheiros.png)
+
+1. **1ª Etapa**: Game e Classes
+2. **2ª Etapa**: Login
+3. **3ª Etapa**: Main Menu e Repositories
+4. **4ª Etapa**: Junção e melhoramento do Main Menu e Game
+
+---
+
+#### Login
+
+![Login](C:\AndroidProjects\WarCardGame\Fotos\Login.png)
+
+Descrição: Diagrama mostrando como o sistema de login valida as credenciais do jogador e o redireciona para o Main Menu.
+
+---
+
+#### Main Menu e Sala de Espera
+
+| ![Main Menu](C:\AndroidProjects\WarCardGame\Fotos\MainMenu.png) | ![Sala de Espera](C:\AndroidProjects\WarCardGame\Fotos\SalaDeEspera.png) |
+
+Descrição: Protótipo representando o layout do Main Menu e a funcionalidade de criação de sala com código único.
+
+---
+
+#### Game (Quando Ambos os Jogadores Estão Dentro da Sala)
+
+![Game](C:\AndroidProjects\WarCardGame\Fotos\Game.png)
+
+Descrição: Esquema visual de como o jogo funciona quando ambos os jogadores estão dentro da sala, com destaque para as interações entre as cartas e os baralhos.
