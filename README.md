@@ -13,4 +13,30 @@ Assim que fiz estes dois pilares da aplicação, todo o resto foi escrito e cria
 
 A etapa final para este projeto focou-se mais no jogo em si outra vez, tratando de tudo de forma que cada jogador conseguisse ver o mesmo jogo, assim como terem os baralhos separados da mesma forma nos dois lados. Foi aqui que modifiquei o endgame de forma que a sala fechasse assim que ambos os jogadores terminassem o jogo. No entanto, houve problemas nesta etapa, os quais explicarei melhor no capítulo das dificuldades.
 
+### Lista de Funcionalidades da Aplicação
+
+A aplicação é um jogo feito para duas pessoas baseado num jogo de cartas designado por “War”. Não entrarei muito em detalhe sobre o jogo em si, mas para a sua funcionalidade:
+
+- O jogo permite que cada jogador jogue quando for a sua vez.
+- Em caso de empate, ambos os jogadores devem pressionar para ver quem ganha o empate.
+- As cartas usadas em cada rodada são descartadas de um baralho e adicionadas a outro, tanto em rodadas normais como em empates.
+- Quando o jogo termina, ambos os jogadores devem pressionar para sair. Quando isso acontece, a sala é apagada do Firebase para evitar sobrecarga com salas vazias.
+
+Além do jogo em si, há outras funcionalidades:
+
+- **Ecrã de Login**:
+    - Permite que o jogador insira suas credenciais (email e password).
+    - Verifica se os dados submetidos correspondem a uma conta existente.
+    - Caso a conta exista, o jogador é redirecionado para o Main Menu.
+
+- **Main Menu**:
+    - O jogador pode decidir se quer criar uma sala ou juntar-se a uma já existente.
+
+- **Criação de Sala**:
+    - O jogador pressiona um botão e é levado para uma sala de espera.
+    - Na sala de espera, é gerado um código único para a sala, que pode ser compartilhado com o oponente.
+    - Este código corresponde à sala criada no Firebase. Quando o oponente insere o código, ele é direcionado à sala correspondente.
+
+- **Início do Jogo**:
+    - Assim que o Firebase deteta dois jogadores na sala, o ecrã de espera desaparece, e o jogo é iniciado para ambos os jogadores.
 
