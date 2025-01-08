@@ -84,3 +84,59 @@ Descrição: Protótipo representando o layout do Main Menu e a funcionalidade d
 
 Descrição: Esquema visual de como o jogo funciona quando ambos os jogadores estão dentro da sala, com destaque para as interações
 entre as cartas e os baralhos.
+
+'''kotlin
+class MainActivity : ComponentActivity() {
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    FirebaseApp.initializeApp(this)
+    enableEdgeToEdge()
+    setContent {
+      val navController = rememberNavController()
+      WarCardGameTheme {
+        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+        NavHost(
+          modifier = Modifier.padding(innerPadding),
+          navController = navController,
+          startDestination = Screen.Login.route
+        ) {
+          composable(Screen.Login.route) {
+            LoginView(
+              modifier = Modifier.padding(innerPadding),
+              onLoginSuccess = {
+                //Log.d("Navigation", "Login successful, navigating to MainMenu") // Debug
+                navController.navigate(Screen.MainMenu.route)
+              }
+            )
+          }
+          composable(Screen.MainMenu.route) {
+            MainMenuView(
+              onStartGame = { roomCode ->
+                //Log.d("Navigation", "Navigating to Game with roomCode: $roomCode") // Debug
+                navController.navigate(Screen.Game.route + "?roomCode=$roomCode")
+              },
+              onJoinGame = { roomCode ->
+                //Log.d("Navigation", "Joining game with roomCode: $roomCode") // Debug
+                navController.navigate(Screen.Game.route + "?roomCode=$roomCode")
+              }
+            )
+          }
+          composable(Screen.Game.route + "?roomCode={roomCode}") { backStackEntry ->
+            val roomCode = backStackEntry.arguments?.getString("roomCode") ?: ""
+            //Log.d("Navigation", "Game screen opened with roomCode: $roomCode") // Debug
+            GameScreen(roomCode = roomCode)
+          }
+        }
+      }
+    }
+  }
+}
+
+sealed class Screen(val route: String) {
+  object Login : Screen("login")
+  object MainMenu : Screen("main_menu")
+  object Game : Screen("game")
+  }
+}
+
+'''
