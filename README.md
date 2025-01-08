@@ -85,7 +85,7 @@ Descrição: Protótipo representando o layout do Main Menu e a funcionalidade d
 Descrição: Esquema visual de como o jogo funciona quando ambos os jogadores estão dentro da sala, com destaque para as interações
 entre as cartas e os baralhos.
 
-'''kotlin
+```kotlin
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -138,5 +138,4 @@ sealed class Screen(val route: String) {
   object Game : Screen("game")
   }
 }
-
-'''
+```
