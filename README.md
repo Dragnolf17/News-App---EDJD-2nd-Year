@@ -1,4 +1,6 @@
-# News-App---EDJD-2nd-Year
+# War Card Game
+
+#### Francisco Ribeiro 27942
 
 ### Estrutura do Projeto
 
